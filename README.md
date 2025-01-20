@@ -18,7 +18,7 @@ This repository demonstrates an automated pipeline for creating supervised datas
   - Includes only questions with accepted answers.
   - Filters by tags (`python`) and date range (`>= 2020-01-01`).
 - Prepares a dataset with `input_text` (questions) and `output_text` (answers).
-
+ 
 #### Code Snippet
 ```sql
 SELECT
