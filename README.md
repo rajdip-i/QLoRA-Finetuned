@@ -77,32 +77,7 @@ def transform_to_llama_format(example):
   - `lora_alpha = 32`: Scaling factor.
   - Dropout: `0.1`.
 
-#### Fine-Tuning Example
-```python
-from peft import LoraConfig, get_peft_model
 
-# Define QLoRA Configuration
-lora_config = LoraConfig(
-    r=64,
-    lora_alpha=32,
-    target_modules=["q_proj", "v_proj"],
-    lora_dropout=0.1,
-    task_type="CAUSAL_LM"
-)
-
-# Apply QLoRA to the model
-model = get_peft_model(model, lora_config)
-
-# Train the model
-trainer = Trainer(
-    model=model,
-    args=training_args,
-    train_dataset=tokenized_data["train"],
-    tokenizer=tokenizer,
-)
-
-trainer.train()
-```
 
 ## Directory Structure
 ```
